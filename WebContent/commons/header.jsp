@@ -1,46 +1,87 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Liga Deportiva Polit&eacute;cnica de Quito</title>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LDPQ</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid"> 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myInverseNavbar2"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="${pageContext.request.contextPath}/vistas/Principal.jsp">Inicio</a> </div>
-    <div class="collapse navbar-collapse" id="myInverseNavbar2">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Eventos</a></li>
-        <li><a href="#">Videos</a></li>
-        <li><a href="galeria.html">Galer&iacute;a</a></li>
-		<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clubes<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="Atletismo.html">Atletismo</a></li>
-			<li><a href="Futbol.html">F&uacute;tbol</a></li>
-            <li><a href="Rugby.html">Rugby</a></li>
-			<li><a href="Voleyball.html">Voleyball</a></li>
-          </ul>
-        </li>
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mas <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="Noticias.html">Noticias</a></li>
-			<li><a href="Contactos.html">Contactos</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Ayuda</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="color:black;" class="navbar-brand" href="${pageContext.request.contextPath}/Vistas/Principal.jsp">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a style="color:black;" href="${pageContext.request.contextPath}/Vistas/Noticias/Noticias.jsp">Noticias</a>
+                    </li>
+                    <li>
+                        <a style="color:black;" href="about.html">Deportes</a>
+                    </li>
+                    <li>
+                        <a style="color:black;" href="post.html">Galeria</a>
+                    </li>
+                    <li>
+                        <a style="color:black;" href="contact.html">Contactos</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('../img/LDPQ.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 style="color:black;">LDPQ</h1>
+                        <hr style="color:black;" class="small" >
+                        <span style="color:black;" class="subheading">Liga Deportiva Polit&eacute;cnica de Quito</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
