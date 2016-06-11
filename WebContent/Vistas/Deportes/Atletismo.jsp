@@ -1,12 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<jsp:include page="/commons/header1.jsp"></jsp:include>
+<section class="container">
+<!-- Main Content -->
+   
+  
+        <%
+          List<Noticia> noticias = (List<Noticia>) request.getAttribute("NOTICIAS");
+          if (noticias!=null){
+        	  for(Noticia n: noticias) {
+        %>
+         <tr>
+           <td><%= n.getTituloNoticia %></td>
+      
+         </tr>
+          <%
+           }
+          }
+        %>
+       <p>Hola</p>
 
-</body>
-</html>
+
+
+    <hr>
+</section>
+<jsp:include page="/commons/footer.jsp"></jsp:include>

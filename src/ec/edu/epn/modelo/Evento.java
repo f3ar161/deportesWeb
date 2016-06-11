@@ -1,4 +1,4 @@
-package deportes;
+package ec.edu.epn.modelo;
 
 import java.io.Serializable;
 import javax.persistence.*;
