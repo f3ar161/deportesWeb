@@ -17,7 +17,7 @@ import ec.edu.epn.modelo.servicios.GestorNoticias;
 /**
  * Servlet implementation class BuscarNoticia
  */
-@WebServlet("/BuscarNoticia")
+@WebServlet("/Vistas/Noticias/BuscarNoticia")
 public class BuscarNoticia extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
