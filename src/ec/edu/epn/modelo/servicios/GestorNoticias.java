@@ -18,7 +18,7 @@ public class GestorNoticias {
 		List <Noticia> noticias= new ArrayList<Noticia>();
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("deportesWeb");
 		EntityManager em = emf.createEntityManager();
-		Query q = em.createQuery("select * from noticias where l.ID_DEPORTE like ? ",Noticia.class);
+		Query q = em.createQuery("select * from noticias as l where l.ID_DEPORTE like ? ",Noticia.class);
 		q.setParameter(1, nombreBusqueda+"%");
 		noticias = q.getResultList();
 		return noticias;

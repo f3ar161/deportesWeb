@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List, ec.edu.epn.modelo.Noticia" %>
-<jsp:include page="/commons/header1.jsp"></jsp:include>
+<jsp:include page="/commons/header.jsp"></jsp:include>
 <section class="container">
 <!-- Main Content -->
     <div class="container">
