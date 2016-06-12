@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ec.edu.epn.getmovie.model.Actor;
+import ec.edu.epn.getmovie.model.service.actor.ServiceActor;
 import ec.edu.epn.modelo.Noticia;
 
 import ec.edu.epn.modelo.servicios.GestorNoticias;
@@ -17,48 +19,43 @@ import ec.edu.epn.modelo.servicios.GestorNoticias;
 /**
  * Servlet implementation class BuscarNoticia
  */
-@WebServlet("/BuscarNoticia")
+@WebServlet("/Deportes/BuscarNoticia")
 public class BuscarNoticia extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	private List<Noticia> noticias=null;
+
     public BuscarNoticia() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+    //recibe las peticiones
+   	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//preparar la informacion
 				
-				String deporteID = request.getParameter("deporteID");
-				int id= Integer.parseInt(deporteID);
+   			/*	request.setAttribute("nombreBusqueda", new Integer(1));
+				int id = Integer.parseInt(request.getParameter("nombreBusqueda"));
 				//llamar al modelo
-				System.out.print("deporteID");
-				GestorNoticias gl = new GestorNoticias();
-				List<Noticia> noticias=null;
-				noticias = gl.buscarNoticias(id);
+				System.out.print("nombreBusqueda");
+				GestorNoticias gn = new GestorNoticias();
+				
+				noticias = gn.buscarNoticia(id);
 				//publicar la informacion
 				request.setAttribute("NOTICIAS", noticias);
 				//redireccionar a la vista
-				
-				RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/Vistas/Deportes/Atletismo.jsp");
-				rd.forward(request, response);
-				System.out.print("3");
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+				getServletConfig().getServletContext().getRequestDispatcher("/Vistas/Deportes/Atletismo.jsp").forward(request, response);
+*/
+   		
+   		GestorNoticias sa = new GestorNoticias();
+   		request.setAttribute("nombreBusqueda", new Integer(1));
+   				String idDeporte = request.getParameter("nombreBusqueda");
+   		
+		if (idDeporte == null)
+			idDeporte = "nada verga hijo de pugtaaaaaaaaaaa";
+		Noticia n = sa.buscarNoticia((int)Integer.parseInt(idDeporte));
+		request.setAttribute("NOTICIAS", n);
+		getServletConfig().getServletContext().getRequestDispatcher("/Vistas/Deportes/Atletismo.jsp").forward(request, response);
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
