@@ -14,36 +14,48 @@ import ec.edu.epn.modelo.Noticia;
 
 import ec.edu.epn.modelo.servicios.GestorNoticias;
 
-@WebServlet("/Vistas/Noticias/BuscarNoticia")
-public class BuscarNoticiaCtrl extends HttpServlet {
+/**
+ * Servlet implementation class BuscarNoticia
+ */
+@WebServlet("/BuscarNoticia")
+public class BuscarNoticia extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-    public BuscarNoticiaCtrl() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public BuscarNoticia() {
         super();
+        // TODO Auto-generated constructor stub
     }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//preparar la información
+		// TODO Auto-generated method stub
+		//preparar la informacion
 				
-				String nombreBusqueda = request.getParameter("nombreBusqueda");
-				
+				String deporteID = request.getParameter("deporteID");
+				int id= Integer.parseInt(deporteID);
 				//llamar al modelo
 				System.out.print("deporteID");
-				GestorNoticias gn = new GestorNoticias();
+				GestorNoticias gl = new GestorNoticias();
 				List<Noticia> noticias=null;
-				noticias = gn.buscarNoticias(nombreBusqueda);
+				noticias = gl.buscarNoticias(id);
 				//publicar la informacion
 				request.setAttribute("NOTICIAS", noticias);
 				//redireccionar a la vista
-				System.out.print("2");
-				RequestDispatcher rd = 
-						request.getServletContext().getRequestDispatcher(
-								"/Vistas/Noticias/Noticias.jsp");
+				
+				RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/Vistas/Deportes/Atletismo.jsp");
 				rd.forward(request, response);
 				System.out.print("3");
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

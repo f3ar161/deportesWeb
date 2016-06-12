@@ -14,12 +14,13 @@ import ec.edu.epn.modelo.Noticia;
 
 public class GestorNoticias {
 
-	public List<Noticia> buscarNoticias (String nombreBusqueda){
+	public List<Noticia> buscarNoticias (int nombreBusqueda){
 		List <Noticia> noticias= new ArrayList<Noticia>();
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("deportesWeb");
 		EntityManager em = emf.createEntityManager();
-		Query q = em.createQuery("select n from Noticia as n where n.TITULO_NOTICIA like ? ",Noticia.class);
+		Query q = em.createQuery("select * from noticias where ID_DEPORTE like ? ",Noticia.class);
 		q.setParameter(1, nombreBusqueda+"%");
+		
 		noticias = q.getResultList();
 		return noticias;
 	}
