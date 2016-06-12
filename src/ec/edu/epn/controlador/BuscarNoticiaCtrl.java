@@ -14,35 +14,24 @@ import ec.edu.epn.modelo.Noticia;
 
 import ec.edu.epn.modelo.servicios.GestorNoticias;
 
-/**
- * Servlet implementation class BuscarNoticia
- */
 @WebServlet("/Vistas/Noticias/BuscarNoticia")
-public class BuscarNoticia extends HttpServlet {
+public class BuscarNoticiaCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BuscarNoticia() {
+    
+    public BuscarNoticiaCtrl() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//preparar la informacion
+		
+		//preparar la información
 				
-				String deporteID = request.getParameter("deporteID");
+				String nombreBusqueda = request.getParameter("nombreBusqueda");
 				
 				//llamar al modelo
 				System.out.print("deporteID");
-				GestorNoticias gl = new GestorNoticias();
+				GestorNoticias gn = new GestorNoticias();
 				List<Noticia> noticias=null;
-				noticias = gl.buscarNoticias(deporteID);
+				noticias = gn.buscarNoticias(nombreBusqueda);
 				//publicar la informacion
 				request.setAttribute("NOTICIAS", noticias);
 				//redireccionar a la vista
@@ -55,9 +44,6 @@ public class BuscarNoticia extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
