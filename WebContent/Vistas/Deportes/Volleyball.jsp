@@ -1,53 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-      <%@ page import="java.util.List, ec.edu.epn.modelo.Noticia" %>
+<%@ page import="java.util.List, ec.edu.epn.modelo.*, ec.edu.epn.controlador.BuscarNoticia, java.text.DateFormat,
+java.text.ParseException,java.text.SimpleDateFormat;
+import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
+
 <jsp:include page="/commons/header1.jsp"></jsp:include>
+
 <section class="container">
 <!-- Main Content -->
-   
-      <form action="BuscarNoticia" method="get">
-       
-         ID: <input type="text" name="deporteID" />
-         <input type="submit" value="Buscar"/> 
-     </form>
-  
-        <%
-          List<Noticia> noticias = (List<Noticia>) request.getAttribute("NOTICIAS");
-          if (noticias!=null){
-        	  for(Noticia n: noticias) {
-        %>
-         <tr>
-           <td><%= n.getTituloNoticia() %></td>
-      
-         </tr>
-          <%
-           }
-          }
-        %>
-       <p>vas</p>
-       
-       <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>                   
-                    
-                    <a href="#">
-                        <img class="img-responsive" src="${pageContext.request.contextPath}/img/atlet.jpg" alt="">
-                    </a>
-                    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+	  <form action="BuscarNoticia" method="get">
+      <h2>Noticias de Atletismo</h2>
+      <button type="submit" class="btn btn-primary btn-xs">Actualizar</button>
+      </form>
+	<article>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+						<table  style=" border-collapse: separate;border-spacing:  6px;">
+							<tr>
+								<th></th>
+								<th></th>
+							</tr>
+							<%
+								List<Noticia> noticias = (List<Noticia>) request.getAttribute("NOTICIAS");
+								SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");	
+							if (noticias != null) {
+								Noticia l = noticias.get(0);	
+							%>
+							<tr>
+								<td><%=l.getTituloNoticia()%>   </td>
+								<td><%=l.getInformacion()%>     </td>
+							</tr>
+							<tr><img src="${pageContext.request.contextPath}/img/atle.jpg" alt=""></tr>
+							<%}%>
+							
+						</table>
+						<hr><hr>
+					<table style="border-collapse: separate; border-spacing: 6px;">
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+						<%
+							if (noticias != null) {
+								Noticia l = noticias.get(1);
+						%>
+						<tr>
+							<td><%=l.getTituloNoticia()%></td>
+							<td><%=l.getInformacion()%></td>
+						</tr>
+						<tr><img src="${pageContext.request.contextPath}/img/liga.jpg"></tr>
+						<%
+							}
+						%>
+					</table>
+ 
+ 						 <span class="caption text-muted">El Atletismo puede influir en la mayor&iacute;a de las funciones org&aacute;nicas. Todo apunta hacia una mejora general del estado f&iacute;sico y mental.</span>
 
-                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+				</div>
+			</div>
+		</div>
+	</article>
 
-                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-                    <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <hr>
+	<hr>
 
 
 
