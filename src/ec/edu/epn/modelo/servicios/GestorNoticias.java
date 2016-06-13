@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import ec.edu.epn.modelo.Deporte;
 import ec.edu.epn.modelo.Noticia;
 
 public class GestorNoticias {
@@ -18,7 +20,6 @@ public class GestorNoticias {
 		this.em = em;
 	}
 
-	@SuppressWarnings("unchecked")
 	public List<Noticia> buscarNoticias(int nombreBusqueda) {
 		List<Noticia> noticias = new ArrayList<Noticia>();
 
@@ -39,6 +40,29 @@ public class GestorNoticias {
 		return notica;
 	}
 
+	
+	public List<Noticia> findForIdDeporte(Integer deporte) {
+	
+		List<Noticia> listaNoticia = new ArrayList<Noticia>();
+		try {
+
+			em = HelperConexion.getEMF();
+			em.getTransaction().begin();
+			Query query = em.createQuery("SELECT n FROM Noticia n WHERE n.deporte.idDeporte like :deporte");
+			query.setParameter("deporte", (Integer) deporte );
+//			query.setParameter("deporte", "%" + deporte + "%");
+			
+			listaNoticia = (List<Noticia>) query.getResultList();
+			em.getTransaction().commit();
+			
+		} catch (Exception e) {
+			System.out.println("error al consultar noticiasl por id deporte " + e);
+		} finally {
+
+		}
+
+		return listaNoticia;
+	}
 	public List<Noticia> findForTituloNoticia(String tituloNoticia) {
 		List<Noticia> listaNoticia = new ArrayList<Noticia>();
 		try {

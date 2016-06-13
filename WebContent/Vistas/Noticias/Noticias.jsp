@@ -19,7 +19,9 @@
 								
     				<div id="collapse1" class="panel-collapse collapse">
       				  <ul class="list-group">
+      				   
         				<li class="list-group-item"> <a href="${pageContext.request.contextPath}/Vistas/Deportes/Atletismo.jsp" >Atlet&iacute;smo</a></li>
+        		
         				<li  id="2" title="deporteID" class="list-group-item"><a href="${pageContext.request.contextPath}/Vistas/Deportes/Futbol.jsp" >F&uacute;tbol</a></li>
         				<li  id="3" title="deporteID" class="list-group-item"><a href="${pageContext.request.contextPath}/Vistas/Deportes/Basket.jsp">Basket</a></li>
         				<li  id="4" title="deporteID" class="list-group-item"><a href="${pageContext.request.contextPath}/Vistas/Deportes/Rugby.jsp" >Rugby</a></li>

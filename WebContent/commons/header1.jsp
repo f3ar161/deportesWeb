@@ -57,14 +57,11 @@
                     <li>
                         <a  href="${pageContext.request.contextPath}/Vistas/Noticias/Noticias.jsp">Noticias</a>
                     </li>
-                    <li>
-                        <a  href="about.html">Deportes</a>
+                     <li>
+                        <a style="color:black;" href="${pageContext.request.contextPath}/Vistas/Galeria/Galeria.jsp">Galeria</a>
                     </li>
                     <li>
-                        <a  href="post.html">Galeria</a>
-                    </li>
-                    <li>
-                        <a  href="contact.html">Contactos</a>
+                        <a style="color:black;" href="${pageContext.request.contextPath}/Vistas/Contactos/Contactos.jsp">Contactos</a>
                     </li>
                 </ul>
             </div>
