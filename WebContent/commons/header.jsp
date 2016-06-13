@@ -14,7 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-
+  
     <!-- Custom CSS -->
     <link href="${pageContext.request.contextPath}/css/clean-blog.min.css" rel="stylesheet">
 
@@ -57,7 +57,7 @@
                         <a style="color:black;" href="about.html">Deportes</a>
                     </li>
                     <li>
-                        <a style="color:black;" href="post.html">Galeria</a>
+                        <a style="color:black;" href="${pageContext.request.contextPath}/Vistas/Galeria/Galeria.jsp">Galeria</a>
                     </li>
                     <li>
                         <a style="color:black;" href="contact.html">Contactos</a>
