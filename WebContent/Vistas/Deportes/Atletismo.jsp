@@ -9,55 +9,51 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 <section class="container">
 <!-- Main Content -->
 
-	  <form action="BuscarNoticia" method="get">
-      <h2>Noticias de Atletismo</h2>
-      <button type="submit" class="btn btn-primary btn-xs">Actualizar</button>
+	  <form action="BuscarNoticiaTituloAtletismo" method="get">
+      <h2>Alguna noticia en especial?</h2>
+      Burcar por Titulo: <input type="text" name="nombreBusqueda" />
+      <button type="submit" class="btn btn-primary btn-xs">Buscar</button>
       </form>
       <hr>
+      <form action="BuscarNoticia" method="get">
+      <h2>Noticias de Atletismo</h2>
+      <button type="submit" class="btn btn-primary btn-xs">Enterate</button>
+      </form>
+      <hr>
+      
+      <form action="BuscarNoticia" method="get">
+      <h3>Entrenadores</h3>
+      <button type="submit" class="btn btn-primary btn-xs">Conocelos</button>
+      </form>
       <hr>
 	<article>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-						<table  style=" border-collapse: separate;border-spacing:  6px;">
-							<tr>
-								<th></th>
-								<th></th>
-							</tr>
-							<%
-								List<Noticia> noticias = (List<Noticia>) request.getAttribute("NOTICIAS");
-								SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");	
-							if (noticias != null) {
-								Noticia l = noticias.get(0);	
-							%>
-							<tr>
-								<td><%=l.getTituloNoticia()%>   </td>
-								<td><%=l.getInformacion()%>     </td>
-							</tr>
-							<tr><img src="${pageContext.request.contextPath}/img/atle.jpg" alt=""></tr>
-							<%}%>
-							
-						</table>
-						<hr><hr>
 					<table style="border-collapse: separate; border-spacing: 6px;">
 						<tr>
 							<th></th>
 							<th></th>
 						</tr>
 						<%
+							List<Noticia> noticias = (List<Noticia>) request.getAttribute("NOTICIAS");
+							SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
 							if (noticias != null) {
-								Noticia l = noticias.get(1);
+								for (Noticia l : noticias) {		
 						%>
 						<tr>
 							<td><%=l.getTituloNoticia()%></td>
 							<td><%=l.getInformacion()%></td>
 						</tr>
-						<tr><img src="${pageContext.request.contextPath}/img/liga.jpg"></tr>
 						<%
-							}
+							} 
+								}
+							
 						%>
+
 					</table>
- 
+					<hr><hr>
+				 
  						 <span class="caption text-muted">El Atletismo puede influir en la mayor&iacute;a de las funciones org&aacute;nicas. Todo apunta hacia una mejora general del estado f&iacute;sico y mental.</span>
 
 				</div>
