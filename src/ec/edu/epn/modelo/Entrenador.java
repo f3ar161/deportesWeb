@@ -76,18 +76,6 @@ public class Entrenador implements Serializable {
 		this.entrenamientos = entrenamientos;
 	}
 
-	public Entrenamiento addEntrenamiento(Entrenamiento entrenamiento) {
-		getEntrenamientos().add(entrenamiento);
-		entrenamiento.setEntrenador(this);
-
-		return entrenamiento;
-	}
-
-	public Entrenamiento removeEntrenamiento(Entrenamiento entrenamiento) {
-		getEntrenamientos().remove(entrenamiento);
-		entrenamiento.setEntrenador(null);
-
-		return entrenamiento;
-	}
+	
 
 }

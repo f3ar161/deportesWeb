@@ -4,41 +4,41 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
-
 /**
  * The persistent class for the deportes database table.
  * 
  */
 @Entity
-@Table(name="deportes")
-@NamedQuery(name="Deporte.findAll", query="SELECT d FROM Deporte d")
+@Table(name = "deportes")
+@NamedQuery(name = "Deporte.findAll", query = "SELECT d FROM Deporte d")
+
 public class Deporte implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="ID_DEPORTE")
+	@Column(name = "ID_DEPORTE")
 	private int idDeporte;
 
-	@Column(name="DESCRIPCION_DEPORTES")
+	@Column(name = "DESCRIPCION_DEPORTES")
 	private String descripcionDeportes;
 
-	@Column(name="NOMBRE_DEPORTE")
+	@Column(name = "NOMBRE_DEPORTE")
 	private String nombreDeporte;
 
-	//bi-directional many-to-one association to Entrenador
-	@OneToMany(mappedBy="deporte")
+	// bi-directional many-to-one association to Entrenador
+	@OneToMany(mappedBy = "deporte")
 	private List<Entrenador> entrenadors;
 
-	//bi-directional many-to-one association to Entrenamiento
-	@OneToMany(mappedBy="deporte")
+	// bi-directional many-to-one association to Entrenamiento
+	@OneToMany(mappedBy = "deporte")
 	private List<Entrenamiento> entrenamientos;
 
-	//bi-directional many-to-one association to Evento
-	@OneToMany(mappedBy="deporte")
+	// bi-directional many-to-one association to Evento
+	@OneToMany(mappedBy = "deporte")
 	private List<Evento> eventos;
 
-	//bi-directional many-to-one association to Noticia
-	@OneToMany(mappedBy="deporte")
+	// bi-directional many-to-one association to Noticia
+	@OneToMany(mappedBy = "deporte")
 	private List<Noticia> noticias;
 
 	public Deporte() {
@@ -140,20 +140,6 @@ public class Deporte implements Serializable {
 
 	public void setNoticias(List<Noticia> noticias) {
 		this.noticias = noticias;
-	}
-
-	public Noticia addNoticia(Noticia noticia) {
-		getNoticias().add(noticia);
-		noticia.setDeporte(this);
-
-		return noticia;
-	}
-
-	public Noticia removeNoticia(Noticia noticia) {
-		getNoticias().remove(noticia);
-		noticia.setDeporte(null);
-
-		return noticia;
 	}
 
 }

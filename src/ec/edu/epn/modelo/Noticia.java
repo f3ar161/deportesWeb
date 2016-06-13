@@ -4,41 +4,40 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 
-
 /**
  * The persistent class for the noticias database table.
  * 
  */
 @Entity
-@Table(name="noticias")
-@NamedQuery(name="Noticia.findAll", query="SELECT n FROM Noticia n")
+@Table(name = "noticias")
+@NamedQuery(name = "Noticia.findAll", query = "SELECT n FROM Noticia n")
 public class Noticia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="ID_NOTICIAS")
+	@Column(name = "ID_NOTICIAS")
 	private int idNoticias;
 
-	@Column(name="AUTOR_NOTICIA")
+	@Column(name = "AUTOR_NOTICIA")
 	private String autorNoticia;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FECHA_NOTICIA")
+	@Column(name = "FECHA_NOTICIA")
 	private Date fechaNoticia;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="HORA_NOTICIA")
+	@Column(name = "HORA_NOTICIA")
 	private Date horaNoticia;
 
 	@Lob
 	private String informacion;
 
-	@Column(name="TITULO_NOTICIA")
+	@Column(name = "TITULO_NOTICIA")
 	private String tituloNoticia;
 
-	//bi-directional many-to-one association to Deporte
+	// bi-directional many-to-one association to Deporte
 	@ManyToOne
-	@JoinColumn(name="ID_DEPORTE")
+	@JoinColumn(name = "ID_DEPORTE")
 	private Deporte deporte;
 
 	public Noticia() {

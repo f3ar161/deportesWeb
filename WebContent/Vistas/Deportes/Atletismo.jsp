@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List, ec.edu.epn.modelo.Noticia" %>
-<% Noticia notica = (Noticia)request.getAttribute("NOTICIAS"); %>
+<%@ page import="java.util.List, ec.edu.epn.modelo.*" %>
+
 <jsp:include page="/commons/header1.jsp"></jsp:include>
 
 <section class="container">
@@ -10,25 +10,20 @@
 
       <h2>Noticias de Atletismo</h2>
         <h2>Busqueda</h2>
-       
-       <form class="form-horizontal" method="get" action="${pageContext.request.contextPath}/Deportes/BuscarNoticia">
-       		<div class="form-group">
-						<label for="Titulo" class="col-lg-2 control-label">Tirutlo</label>
-						<div class="col-lg-10">
-							<input type="text" class="form-control" id="Titulo"
- 									value="<%= notica.getTituloNoticia() %>" readonly=true>
-						</div>
-					</div>
-       </form>
-     
-     <table>
+    
+		<form action="BuscarNoticia" method="get">
+         Nombre: <input type="text" name="nombreBusqueda" />
+         <input type="submit" value="Buscar"/> 
+     </form>
+		
+		     <table>
         <tr>
           
            <th>Nombre</th>
          
         </tr>
         <%
-          List<Noticia> noticias = (List<Noticia>)request.getAttribute("NOTICAS");
+          List<Noticia> noticias = (List<Noticia>)request.getAttribute("NOTICIAS");
           if (noticias!=null){
             for(Noticia l: noticias) {
         %>
