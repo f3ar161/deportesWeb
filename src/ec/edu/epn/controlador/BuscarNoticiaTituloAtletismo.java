@@ -12,12 +12,12 @@ import ec.edu.epn.modelo.Noticia;
 
 import ec.edu.epn.modelo.servicios.GestorNoticias;
 
-@WebServlet("Vistas/Deportes/BuscarNoticiaBasket")
-public class BuscarNoticiaBasket extends HttpServlet {
+@WebServlet("Vistas/Deportes/BuscarNoticiaTituloAtletismo")
+public class BuscarNoticiaTituloAtletismo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private List<Noticia> noticias=null;
 
-    public BuscarNoticiaBasket() {
+    public BuscarNoticiaTituloAtletismo() {
         super();
         
     }
@@ -25,18 +25,14 @@ public class BuscarNoticiaBasket extends HttpServlet {
    	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
    		String prod = request.getParameter("nombreBusqueda");
-   		
-   		//Integer id= (Integer)request.getAttribute("idDeporte");;
-   		Integer id=2;
-   		
-		//		System.out.print("nombreBusqueda");
 				GestorNoticias gn = new GestorNoticias();
 
-				noticias = gn.findForIdDeporte(id);
+				noticias = gn.findForTituloNoticia(prod);
 				request.setAttribute("NOTICIAS", noticias);
 				System.out.print(noticias.size());
-				getServletConfig().getServletContext().getRequestDispatcher("/Vistas/Deportes/Basket.jsp").forward(request, response);
+				getServletConfig().getServletContext().getRequestDispatcher("/Vistas/Deportes/Atletismo.jsp").forward(request, response);
 
 	}
 
 }
+

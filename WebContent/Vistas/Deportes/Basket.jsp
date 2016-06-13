@@ -8,8 +8,8 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 
 <section class="container">
 <!-- Main Content -->
-	  <form action="BuscarNoticia" method="get">
-      <h2>Noticias de Atletismo</h2>
+	  <form action="BuscarNoticiaBasket" method="get">
+      <h2>Noticias de Basket</h2>
       <button type="submit" class="btn btn-primary btn-xs">Actualizar</button>
       </form>
 	<article>
@@ -31,7 +31,7 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 								<td><%=l.getTituloNoticia()%>   </td>
 								<td><%=l.getInformacion()%>     </td>
 							</tr>
-							<tr><img src="${pageContext.request.contextPath}/img/atle.jpg" alt=""></tr>
+							<tr><img src="${pageContext.request.contextPath}/img/basket.jpg" alt=""></tr>
 							<%}%>
 							
 						</table>
@@ -49,13 +49,13 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 							<td><%=l.getTituloNoticia()%></td>
 							<td><%=l.getInformacion()%></td>
 						</tr>
-						<tr><img src="${pageContext.request.contextPath}/img/liga.jpg"></tr>
+						<tr><img src="${pageContext.request.contextPath}/img/hor.jpg"></tr>
 						<%
 							}
 						%>
 					</table>
  
- 						 <span class="caption text-muted">El Atletismo puede influir en la mayor&iacute;a de las funciones org&aacute;nicas. Todo apunta hacia una mejora general del estado f&iacute;sico y mental.</span>
+ 						 <span class="caption text-muted">El baloncesto es ejercicio muy completo que desarrolla habilidades como equilibrio, concentración, autocontrol, personalidad, confianza y rapidez de ejecución, agilidad muscular y reflejos precisos que benefician la salud.</span>
 
 				</div>
 			</div>

@@ -8,10 +8,13 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 
 <section class="container">
 <!-- Main Content -->
+
 	  <form action="BuscarNoticia" method="get">
       <h2>Noticias de Atletismo</h2>
       <button type="submit" class="btn btn-primary btn-xs">Actualizar</button>
       </form>
+      <hr>
+      <hr>
 	<article>
 		<div class="container">
 			<div class="row">

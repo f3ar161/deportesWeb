@@ -70,7 +70,7 @@ public class GestorNoticias {
 			em = HelperConexion.getEMF();
 			em.getTransaction().begin();
 			Query query = em.createQuery("SELECT n FROM Noticia n WHERE n.tituloNoticia like :tituloNoticia");
-			query.setParameter("tituloNoticia", "%" + tituloNoticia + "%");
+			query.setParameter("tituloNoticia", "%" + tituloNoticia.trim() + "%");
 			listaNoticia = (List<Noticia>) query.getResultList();
 			em.getTransaction().commit();
 		} catch (Exception e) {
