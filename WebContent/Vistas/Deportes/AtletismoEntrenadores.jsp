@@ -23,6 +23,7 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 						<tr>
 							<th>Nombre del entrenador</th>
 							<th>Tipo de entrenador</th>
+							
 						</tr>
 						<%
 							List<Entrenador> entrenadores = (List<Entrenador>) request.getAttribute("ENTRENADORES");
@@ -52,7 +53,11 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 	</article>
 
 	<hr>
-
+	<ul class="pager">
+                    <li class="next">
+                        <a href="${pageContext.request.contextPath}/Vistas/Deportes/Atletismo.jsp">Regresar &larr;</a>
+                    </li>
+                </ul>
 
 
     <hr>

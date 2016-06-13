@@ -12,7 +12,7 @@ import ec.edu.epn.modelo.Noticia;
 
 import ec.edu.epn.modelo.servicios.GestorNoticias;
 
-@WebServlet("Vistas/Deportes/BuscarNoticiaTituloAtletismo")
+@WebServlet("Vistas/Noticias/BuscarNoticiaTituloAtletismo")
 public class BuscarNoticiaTituloAtletismo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private List<Noticia> noticias=null;
@@ -30,7 +30,7 @@ public class BuscarNoticiaTituloAtletismo extends HttpServlet {
 				noticias = gn.findForTituloNoticia(prod);
 				request.setAttribute("NOTICIAS", noticias);
 				System.out.print(noticias.size());
-				getServletConfig().getServletContext().getRequestDispatcher("/Vistas/Deportes/Atletismo.jsp").forward(request, response);
+				getServletConfig().getServletContext().getRequestDispatcher("/Vistas/Noticias/NoticiasTitulo.jsp").forward(request, response);
 
 	}
 

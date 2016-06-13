@@ -9,19 +9,16 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 <section class="container">
 <!-- Main Content -->
 
-	  <form action="BuscarNoticiaTituloAtletismo" method="get">
-      <h2>Alguna noticia en especial?</h2>
-      Burcar por Titulo: <input type="text" name="nombreBusqueda" />
-      <button type="submit" class="btn btn-primary btn-xs">Buscar</button>
-      </form>
-      <hr>
+	 
       <form action="BuscarNoticia" method="get">
       <h2>Noticias de Atletismo</h2>
       <button type="submit" class="btn btn-primary btn-xs">Enterate</button>
       </form>
       <hr>
-      
       <h3><a href="${pageContext.request.contextPath}/Vistas/Deportes/AtletismoEntrenadores.jsp" >Entrenadores</a></h3>
+      <hr>
+      <h3><a href="${pageContext.request.contextPath}/Vistas/Deportes/AtletismoEntrenamientos.jsp" >Entrenamientos</a></h3>
+      
 
       <hr>
 	<article>
@@ -61,7 +58,11 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 
 	<hr>
 
-
+		<ul class="pager">
+                    <li class="next">
+                        <a href="${pageContext.request.contextPath}/Vistas/Noticias/Noticias.jsp">Regresar &larr;</a>
+                    </li>
+                </ul>
 
     <hr>
 </section>
