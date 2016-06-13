@@ -10,7 +10,7 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 <!-- Main Content -->
 
       
-      <form action="BuscarNoticia" method="get">
+      <form action="BuscarEntrenador" method="get">
       <h3>Entrenadores</h3>
       <button type="submit" class="btn btn-primary btn-xs">Conocelos</button>
       </form>
@@ -19,10 +19,10 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<table style="border-collapse: separate; border-spacing: 6px;">
+					<table style="border-collapse: separate; border-spacing: 15px;">
 						<tr>
-							<th></th>
-							<th></th>
+							<th>Nombre del entrenador</th>
+							<th>Tipo de entrenador</th>
 						</tr>
 						<%
 							List<Entrenador> entrenadores = (List<Entrenador>) request.getAttribute("ENTRENADORES");
@@ -44,7 +44,7 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 					</table>
 					<hr><hr>
 				 
- 						 <span class="caption text-muted">El Atletismo puede influir en la mayor&iacute;a de las funciones org&aacute;nicas. Todo apunta hacia una mejora general del estado f&iacute;sico y mental.</span>
+ 						 <span class="caption text-muted">La figura del entrenador se compromete con el usuario a hacer todo lo que est&eacute; en su mano para que el entreno resulte divertido y seguro, buscando ejercicios variados y adecuados a cada momento o necesidad.</span>
 
 				</div>
 			</div>

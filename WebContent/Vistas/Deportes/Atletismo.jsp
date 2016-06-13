@@ -21,10 +21,8 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
       </form>
       <hr>
       
-      <form action="BuscarNoticia" method="get">
-      <h3>Entrenadores</h3>
-      <button type="submit" class="btn btn-primary btn-xs">Conocelos</button>
-      </form>
+      <h3><a href="${pageContext.request.contextPath}/Vistas/Deportes/AtletismoEntrenadores.jsp" >Entrenadores</a></h3>
+
       <hr>
 	<article>
 		<div class="container">
@@ -32,8 +30,8 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<table style="border-collapse: separate; border-spacing: 6px;">
 						<tr>
-							<th></th>
-							<th></th>
+							<th>Titular</th>
+							<th>Informaci&oacute;n</th>
 						</tr>
 						<%
 							List<Noticia> noticias = (List<Noticia>) request.getAttribute("NOTICIAS");
