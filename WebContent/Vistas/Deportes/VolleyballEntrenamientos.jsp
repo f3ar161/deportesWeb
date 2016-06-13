@@ -11,8 +11,8 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar"%>
 	<!-- Main Content -->
 
 
-	<form action="BuscarEntrenamiento" method="get">
-		<h3>Entrenadores</h3>
+	<form action="BuscarEntrenamientoVolleyball" method="get">
+		<h3>Entrenamientos</h3>
 		<button type="submit" class="btn btn-primary btn-xs">Conocelos</button>
 	</form>
 	<hr>
@@ -27,7 +27,7 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar"%>
 							<th>Fecha</th>
 							<th>Hora</th>
 							<th>Entrenador</th>
-							
+
 
 						</tr>
 						<%
@@ -35,20 +35,19 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar"%>
 							DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 							DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");
 							if (entrenamientos != null) {
-								for (Entrenamiento l : entrenamientos) {		
+								for (Entrenamiento l : entrenamientos) {
 						%>
 						<tr>
 							<td><%=l.getDescripcionEntrenamiento()%></td>
 							<td><%=l.getLugarEntrenamiento()%></td>
-							<td><%=dateFormat.format(l.getFechaEntrenamiento()) %></td>
-							<td><%=hourFormat.format(l.getHoraEntrenamiento()) %></td>
+							<td><%=dateFormat.format(l.getFechaEntrenamiento())%></td>
+							<td><%=hourFormat.format(l.getHoraEntrenamiento())%></td>
 							<td><%=l.getEntrenador().getNombreEntrenador()%></td>
 
 						</tr>
 						<%
-							} 
-								}
-							
+							}
+							}
 						%>
 
 					</table>
@@ -69,14 +68,14 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar"%>
 	</article>
 
 	<hr>
-		<ul class="pager">
-                    <li class="next">
-                        <a href="${pageContext.request.contextPath}/Vistas/Deportes/Atletismo.jsp">Regresar &larr;</a>
-                    </li>
-                </ul>
+	<ul class="pager">
+		<li class="next"><a
+			href="${pageContext.request.contextPath}/Vistas/Deportes/Volleyball.jsp">Regresar
+				&larr;</a></li>
+	</ul>
 
 
-    <hr>
+	<hr>
 
 	<hr>
 </section>

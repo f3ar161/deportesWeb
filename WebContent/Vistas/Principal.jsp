@@ -34,7 +34,7 @@
                 <div class="post-preview">
                     <a href="${pageContext.request.contextPath}/Vistas/Deportes/Basket.jsp">
                         <h2 class="post-title">
-                            Enterate de mas el Basket
+                            Enterate mas el Basket
                         </h2>
                         <h3 class="post-subtitle">
                             Todo referente a noticias de Basket

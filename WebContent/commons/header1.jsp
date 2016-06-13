@@ -58,10 +58,10 @@
                         <a  href="${pageContext.request.contextPath}/Vistas/Noticias/Noticias.jsp">Noticias</a>
                     </li>
                      <li>
-                        <a style="color:black;" href="${pageContext.request.contextPath}/Vistas/Galeria/Galeria.jsp">Galeria</a>
+                        <a  href="${pageContext.request.contextPath}/Vistas/Galeria/Galeria.jsp">Galeria</a>
                     </li>
                     <li>
-                        <a style="color:black;" href="${pageContext.request.contextPath}/Vistas/Contactos/Contactos.jsp">Contactos</a>
+                        <a  href="${pageContext.request.contextPath}/Vistas/Contactos/Contactos.jsp">Contactos</a>
                     </li>
                 </ul>
             </div>

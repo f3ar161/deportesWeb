@@ -11,8 +11,8 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar"%>
 	<!-- Main Content -->
 
 
-	<form action="BuscarEntrenamiento" method="get">
-		<h3>Entrenadores</h3>
+	<form action="BuscarEntrenamientoBasket" method="get">
+		<h3>Entrenamiento</h3>
 		<button type="submit" class="btn btn-primary btn-xs">Conocelos</button>
 	</form>
 	<hr>
@@ -71,7 +71,7 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar"%>
 	<hr>
 		<ul class="pager">
                     <li class="next">
-                        <a href="${pageContext.request.contextPath}/Vistas/Deportes/Atletismo.jsp">Regresar &larr;</a>
+                        <a href="${pageContext.request.contextPath}/Vistas/Deportes/Basket.jsp">Regresar &larr;</a>
                     </li>
                 </ul>
 

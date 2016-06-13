@@ -8,53 +8,47 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 
 <section class="container">
 <!-- Main Content -->
-	  <form action="BuscarNoticia" method="get">
+
+	 
+      <form action="BuscarNoticiaRugby" method="get">
       <h2>Noticias de Rugby</h2>
-      <button type="submit" class="btn btn-primary btn-xs">Actualizar</button>
+      <button type="submit" class="btn btn-primary btn-xs">Enterate</button>
       </form>
+      <hr>
+      <h3><a href="${pageContext.request.contextPath}/Vistas/Deportes/RugbyEntrenadores.jsp" >Entrenadores</a></h3>
+      <hr>
+      <h3><a href="${pageContext.request.contextPath}/Vistas/Deportes/RugbyEntrenamientos.jsp" >Entrenamientos</a></h3>
+      
+
+      <hr>
 	<article>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-						<table  style=" border-collapse: separate;border-spacing:  6px;">
-							<tr>
-								<th></th>
-								<th></th>
-							</tr>
-							<%
-								List<Noticia> noticias = (List<Noticia>) request.getAttribute("NOTICIAS");
-								SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");	
-							if (noticias != null) {
-								Noticia l = noticias.get(0);	
-							%>
-							<tr>
-								<td><%=l.getTituloNoticia()%>   </td>
-								<td><%=l.getInformacion()%>     </td>
-							</tr>
-							<tr><img src="${pageContext.request.contextPath}/img/atle.jpg" alt=""></tr>
-							<%}%>
-							
-						</table>
-						<hr><hr>
 					<table style="border-collapse: separate; border-spacing: 6px;">
 						<tr>
-							<th></th>
-							<th></th>
+							<th>Titular</th>
+							<th>Informaci&oacute;n</th>
 						</tr>
 						<%
+							List<Noticia> noticias = (List<Noticia>) request.getAttribute("NOTICIAS");
+							SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
 							if (noticias != null) {
-								Noticia l = noticias.get(1);
+								for (Noticia l : noticias) {		
 						%>
 						<tr>
 							<td><%=l.getTituloNoticia()%></td>
 							<td><%=l.getInformacion()%></td>
 						</tr>
-						<tr><img src="${pageContext.request.contextPath}/img/liga.jpg"></tr>
 						<%
-							}
+							} 
+								}
+							
 						%>
+
 					</table>
- 
+					<hr><hr>
+				 
  						 <span class="caption text-muted">El Atletismo puede influir en la mayor&iacute;a de las funciones org&aacute;nicas. Todo apunta hacia una mejora general del estado f&iacute;sico y mental.</span>
 
 				</div>
@@ -64,7 +58,11 @@ import java.util.Calendar, java.util.Date, java.util.GregorianCalendar" %>
 
 	<hr>
 
-
+		<ul class="pager">
+                    <li class="next">
+                        <a href="${pageContext.request.contextPath}/Vistas/Noticias/Noticias.jsp">Regresar &larr;</a>
+                    </li>
+                </ul>
 
     <hr>
 </section>

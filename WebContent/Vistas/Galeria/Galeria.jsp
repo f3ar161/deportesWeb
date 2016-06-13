@@ -50,7 +50,7 @@
                     
                      	<ul class="pager">
                     		<li class="next">
-                        	<a href="${pageContext.request.contextPath}/Vistas/Deportes/Voley.jsp">Más sobre Volleyball &rarr;</a>
+                        	<a href="${pageContext.request.contextPath}/Vistas/Deportes/Volleyball.jsp">Más sobre Volleyball &rarr;</a>
                     		</li>
                 		</ul>	
                 	</div>  
@@ -66,7 +66,7 @@
                     
                      	<ul class="pager">
                     		<li class="next">
-                        	<a href="${pageContext.request.contextPath}/Vistas/Deportes/Futbol.jsp">Más sobre Rugby &rarr;</a>
+                        	<a href="${pageContext.request.contextPath}/Vistas/Deportes/Rugby.jsp">Más sobre Rugby &rarr;</a>
                     		</li>
                 		</ul>	
                 	</div>  
@@ -82,7 +82,7 @@
                     
                      	<ul class="pager">
                     		<li class="next">
-                        	<a href="${pageContext.request.contextPath}/Vistas/Deportes/Voleyball.jsp">Más sobre Basketball &rarr;</a>
+                        	<a href="${pageContext.request.contextPath}/Vistas/Deportes/Basket.jsp">Más sobre Basketball &rarr;</a>
                     		</li>
                 		</ul>	
                 	</div>  

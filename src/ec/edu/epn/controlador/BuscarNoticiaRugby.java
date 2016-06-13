@@ -1,41 +1,42 @@
 package ec.edu.epn.controlador;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class BuscarNoticiaRugby
- */
-@WebServlet("/BuscarNoticiaRugby")
+import ec.edu.epn.modelo.Noticia;
+
+import ec.edu.epn.modelo.servicios.GestorNoticias;
+
+@WebServlet("Vistas/Deportes/BuscarNoticiaRugby")
 public class BuscarNoticiaRugby extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	private List<Noticia> noticias=null;
+
     public BuscarNoticiaRugby() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+   	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+   		String prod = request.getParameter("nombreBusqueda");
+   		
+   		//Integer id= (Integer)request.getAttribute("idDeporte");;
+   		Integer id=5;
+   		
+		//		System.out.print("nombreBusqueda");
+				GestorNoticias gn = new GestorNoticias();
+
+				noticias = gn.findForIdDeporte(id);
+				request.setAttribute("NOTICIAS", noticias);
+				System.out.print(noticias.size());
+				getServletConfig().getServletContext().getRequestDispatcher("/Vistas/Deportes/Rugby.jsp").forward(request, response);
+
 	}
 
 }
